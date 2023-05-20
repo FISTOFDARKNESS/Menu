@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu de Jogos - Tema Profissional</title>
+  <style>
+    /* Estilos gerais */
+    body {
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilos para o menu */
+    .menu {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .menu li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .menu li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 12px 24px;
+      border-radius: 50px;
+      background-color: #4CAF50;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      background-color: #45a049;
+    }
+
+    /* Estilos para o conteúdo dos jogos */
+    .conteudo {
+      text-align: center;
+      color: #fff;
+    }
+
+    .jogo {
+      display: inline-block;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 50px;
+    }
+
+    .jogo:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function traduzirFrases() {
+      var elementosTraducao = document.getElementsByClassName('traduzir');
+
+      for (var i = 0; i < elementosTraducao.length; i++) {
+        var elemento = elementosTraducao[i];
+        var fraseOriginal = elemento.getAttribute('data-frase-original');
+        var fraseTraduzida = elemento.getAttribute('data-frase-traduzida');
+
+        if (elemento.innerHTML === fraseOriginal) {
+          elemento.innerHTML = fraseTraduzida;
+        } else {
+          elemento.innerHTML = fraseOriginal;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="conteudo">
+    <h2 class="traduzir" data-frase-original="Bem-vindo ao Menu de Jogos!" data-frase-traduzida="Welcome to the Game Menu!">Bem-vindo ao Menu de Jogos!</h2>
+    <p class="traduzir" data-frase-original="Escolha um dos jogos abaixo:" data-frase-traduzida="Choose one of the games below:">Escolha um dos jogos abaixo:</p>
+    <ul class="menu">
+      <li><a href="https://www.jogo1.com" class="jogo traduzir" data-frase-original="Jogo 1" data-frase-traduzida="Game 1">Jogo 1</a></li>
+      <li><a href="https://www.jogo2.com" class="jogo traduzir" data-frase-original="Jogo 2" data-frase-traduzida="Game 2">Jogo 2</a></li>
+      <li><a href="https://www.jogo3.com" class="jogo traduzir" data-frase-original="Jogo 3" data-frase-traduzida="Game 3">Jogo 3</a></li>
+      <li><a href="https://www.jogo4.com" class="jogo traduzir" data-frase-original="Jogo 4" data-frase-traduzida="Game 4">Jogo 4</a></li>
+      <li><a href="https://www.jogo4.com" class="jogo traduzir" data-frase-original="search url" data-frase-traduzida="search url">URL(link)</a></li>
+    </ul>
+    <button onclick="traduzirFrases()">Traduzir</button>
+  </div>
+</body>
+</html>
